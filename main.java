@@ -12,24 +12,22 @@ public class Main {
     System.out.println("9: Tangente hiperbólico (tanh)");
    }
 
-   public static void main(String[] args){
-    imprimir_opciones();
-   }
-}
-
-class funciones_hiperblicas {
-    public double senh(double angulo) {
+   public static double senh(double angulo) {
         double res = (Math.pow(Math.E, angulo) - Math.pow(Math.E, -angulo))/2;
         return res;
     }
 
-    public double cosh(double angulo) {
+    public static double cosh(double angulo) {
         double res = (Math.pow(Math.E, angulo) + Math.pow(Math.E, -angulo))/2;
         return res;
     }
 
-    public double tanh(double angulo) {
+    public static double tanh(double angulo) {
         double res = senh(angulo)/cosh(angulo);
         return res;
     }
+
+   public static void main(String[] args){
+    imprimir_opciones();
+   }
 }
