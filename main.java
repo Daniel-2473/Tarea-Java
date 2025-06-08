@@ -1,36 +1,4 @@
-public class Main {
-   public static void imprimir_opciones() {
-    System.out.println("Calculadora de funciones trigonométricas");
-    System.out.println("1: Seno (sen)"); //La idea es que el usuario ingrese algún número para seleccionar la función
-    System.out.println("2: Coseno (cos)");
-    System.out.println("3: Tangente (tan)");
-    System.out.println("4: Arcoseno (arcsen)");
-    System.out.println("5: Arcocoseno (arccos)");
-    System.out.println("6: Arcotangente (arctan)");
-    System.out.println("7: Seno hiperbólico (senh)");
-    System.out.println("8: Coseno hiperbólico (cosh)");
-    System.out.println("9: Tangente hiperbólico (tanh)");
-   }
 
-   public static double senh(double angulo) {
-        double res = (Math.pow(Math.E, angulo) - Math.pow(Math.E, -angulo))/2;
-        return res;
-    }
-
-    public static double cosh(double angulo) {
-        double res = (Math.pow(Math.E, angulo) + Math.pow(Math.E, -angulo))/2;
-        return res;
-    }
-
-    public static double tanh(double angulo) {
-        double res = senh(angulo)/cosh(angulo);
-        return res;
-    }
-
-   public static void main(String[] args){
-    imprimir_opciones();
-   }
-}
 /* 
  Así lo tenia pensado, que el usuario primera eliga que tipo de 
  funcion trigonometrica quiere medir, que luego ese valor meterlo a un switch
@@ -96,7 +64,28 @@ public class Main {
                 }
                 System.out.println("Resultado: " + resultado + "°");
                 break;
-         }
+            case 3:
+                System.out.println("1: Seno hiperbólico (sinh)");
+                System.out.println("2: Coseno hiperbólico (cosh)");
+                System.out.println("3: Tangente hiperbólico (tanh)");
+                System.out.print("Seleccione una función (1-3): ");
+                int opcionHiperbólica = sc.nextInt();
+                System.out.print("Ingrese el valor numérico: ");
+                valor = sc.nextDouble();
 
+                switch (opcionHiperbólica) { 
+                    case 1:
+                        resultado = Math.sinh(valor);
+                        break;
+                    case 2:
+                        resultado = Math.cosh(valor);
+                        break;
+                    case 3:
+                        resultado = Math.tanh(valor);
+                        break;
+                }
+                System.out.println("Resultado: " + resultado);
+                break;
+         }
    }
 }
