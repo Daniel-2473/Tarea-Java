@@ -19,6 +19,32 @@ public class Main {
 
         double valor, resultado = 0.0;
         switch (categoria) {// poner case 1 para las normales y case 3 para las hiperbólicas
+            case 1:
+                System.out.println("1: seno (sin)");
+                System.out.println("2: coseno (cos)");
+                System.out.println("3: tangente (tan)");
+                System.out.print("Seleccione una función (1-3): ");
+                int opcionNormal = sc.nextInt();
+
+                System.out.print("Ingrese el valor del ángulo en grados: ");
+                double valorNormal = sc.nextDouble();
+                double radianes = Math.toRadians(valorNormal);
+
+                switch (opcionNormal) {
+                    case 1:
+                        System.out.println("El resultado es: " + Math.sin(radianes));
+                        break;
+                    case 2:
+                        System.out.println("El resultado es: " + Math.cos(radianes));
+                        break;
+                    case 3:
+                        System.out.println("El resultado es: " + Math.tan(radianes));
+                        break;
+                    default:
+                        System.out.println("Opción inválida.");
+                        return;
+                }
+                break;
             case 2:
                 System.out.println("1: Arcoseno (arcsin)");
                 System.out.println("2: Arcocoseno (arccos)");
